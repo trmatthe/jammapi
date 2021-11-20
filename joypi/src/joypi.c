@@ -22,7 +22,7 @@
 #include <linux/slab.h>
 #include "mcp23017.h"
 
-#define DRIVER_DESC "JoyPi MCP23017 Joystick"
+#define DRIVER_DESC "RGB-Pi MCP23017 Joystick"
 
 MODULE_AUTHOR("");
 MODULE_DESCRIPTION(DRIVER_DESC);
@@ -138,7 +138,7 @@ int __init joypi_init(void)
 		mcp23017_set_gppua(joy->io_expander, i, 0xFF);
 		mcp23017_set_gppub(joy->io_expander, i, 0xFF);
 
-		snprintf(joy->name[i], sizeof(joy->name[i]), "JoyPi Joystick %d", i);
+		snprintf(joy->name[i], sizeof(joy->name[i]), "RGB-Pi Joystick %d", i);
 		snprintf(joy->phys[i], sizeof(joy->phys[i]), "input%d", i);
 
 		input_dev->name = joy->name[i];
