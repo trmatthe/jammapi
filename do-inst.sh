@@ -10,7 +10,7 @@ cd joypi
 make
 
 if [[ $? -gt 0 ]]; then
-  echo make failed, exiting.
+  echo "make failed with $?, exiting."
   exit
 fi
 
