@@ -49,4 +49,4 @@ if [[ ! -z "$ADDED" ]]; then
 fi
 
 echo "Module built for kernel $(modinfo -F vermagic) and kernel is $(uname -r)"
-
+sudo insmod "$TARGET"
