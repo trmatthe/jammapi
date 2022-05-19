@@ -17,10 +17,10 @@
                 it seems incredibly unlikely anybody will use this and GCC < 5, I have
                 done the file swap in the repo. Seems a less confusing solution to me.
 
-                This is the file which was promoted to build source if gcc is > 5, but is
-                now the default file.
-*/
+                This is the original .c file which would be deleted by the old installer.
+                Kept in case there are use/build cases I've not seen
 
+*/
 
 #include <linux/i2c.h>
 #include <linux/slab.h>
@@ -64,7 +64,7 @@ struct MCP23017 *mcp23017_init(void)
 	if(m) {
 		m->adapter = i2c_get_adapter(0);
 		for(i = 0; i < MAX_MCP23017_CLIENTS; ++i) {
-			m->client[i] = i2c_new_dummy_device(m->adapter, 0x20 + i);
+			m->client[i] = i2c_new_dummy(m->adapter, 0x20 + i);
 		}
 	}
 
